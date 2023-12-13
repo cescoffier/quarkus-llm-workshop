@@ -104,7 +104,6 @@
                         <relativeBaseDir>true</relativeBaseDir>
                         <preserveDirectories>true</preserveDirectories>
                         <backend>html</backend>
-                        <sourceDocumentName>spine.adoc</sourceDocumentName>
                         <attributes>
                             <!-- Allows access to remote files (e.g. code on external GitHub) -->
                             <allow-uri-read/>
