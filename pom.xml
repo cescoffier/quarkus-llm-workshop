@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>me.escoffier</groupId>
+    <artifactId>quarkus-llm-workshop-root</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+    <name>Quarkus LLM Workshop :: R00T</name>
+    <properties>
+        <assembly-plugin.version>3.6.0</assembly-plugin.version>
+
+        <quarkus.version>3.6.1</quarkus.version>
+        <quarkus-langchain.version>0.4.0</quarkus-langchain.version>
+    </properties>
+
+    <modules>
+        <module>triage-application</module>
+        <module>docs</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>${assembly-plugin.version}</version>
+                <configuration>
+                    <finalName>quarkus-llm-workshop</finalName>
+                    <appendAssemblyId>true</appendAssemblyId>
+                    <runOnlyAtExecutionRoot>true</runOnlyAtExecutionRoot>
+                    <attach>false</attach>
+                    <descriptors>
+                        <descriptor>assembly.xml</descriptor>
+                    </descriptors>
+                    <outputDirectory>dist</outputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id> <!-- this is used for inheritance merges -->
+                        <phase>package</phase> <!-- bind to the packaging phase -->
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
