@@ -1,0 +1,94 @@
+site_name: Quarkus LLM Workshop
+repo_url: https://github.com/cescoffier/quarkus-llm-workshop
+docs_dir: content
+edit_uri: edit/main/docs/content
+
+nav:
+    - 'index.md'
+    - 'Workshop':
+          - 'workshop/01-slot1.md'
+    - 'Appendixes':
+          - 'appendixes/installing-curl.md'
+          - 'appendixes/installing-docker.md'
+          - 'appendixes/installing-jdk.md'
+          - 'appendixes/installing-wsl.md'
+
+theme:
+    name: material
+    logo: assets/quarkus-logo.png
+    font:
+        text: Roboto
+        code: JetBrains Mono
+    icon:
+        repo: fontawesome/brands/github
+    favicon: assets/quarkus-logo.png
+    palette:
+        - media: "(prefers-color-scheme: light)"
+          scheme: default
+          primary: light blue
+          accent: deep orange
+          toggle:
+              icon: material/lightbulb-night
+              name: Switch to dark mode
+        - media: "(prefers-color-scheme: dark)"
+          scheme: slate
+          primary: black
+          accent: orange
+          toggle:
+              icon: material/lightbulb-on
+              name: Switch to light mode
+    features:
+        - navigation.instant
+        - navigation.indexes
+        - navigation.sections
+        - navigation.expand
+        - navigation.tracking
+        - content.code.copy
+        - toc.follow
+    custom_dir: mkdocs-customizations/overrides
+
+markdown_extensions:
+    - toc:
+          permalink: '#'
+    - admonition
+    - smarty
+    - attr_list
+    - md_in_html
+    - meta
+    - tables
+    - pymdownx.highlight:
+          anchor_linenums: true
+    - pymdownx.superfences:
+          custom_fences:
+              - name: mermaid
+                class: mermaid
+                format: !!python/name:pymdownx.superfences.fence_code_format
+    - pymdownx.snippets
+    - pymdownx.inlinehilite
+    - pymdownx.details
+    - pymdownx.smartsymbols
+    - pymdownx.betterem
+    - pymdownx.tabbed:
+          alternate_style: true
+    - pymdownx.emoji:
+          emoji_index: !!python/name:material.extensions.emoji.twemoji
+          emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    - footnotes
+
+plugins:
+    - search
+    - macros:
+          verbose: true
+          module_name: mkdocs-customizations/macros/docissimo
+          include_dir: mkdocs-customizations/macros
+
+extra_css:
+    - assets/extra.css
+
+extra:
+    snippet_dir: src/test
+    attributes_path: attributes.yaml
+    javadoc_artifact: io.smallrye.reactive/smallrye-mutiny
+    manifest: manifest.webmanifest
+    version:
+        provider: mike

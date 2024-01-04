@@ -32,7 +32,7 @@ jobs:
                   java-version: 17
             - name: Generate zips
               run: |
-                  mvn package -N
+                  mvn package -Passembly
             - name: Commit zips
               run: |
                   git config --global user.name 'Github Actions'
