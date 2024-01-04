@@ -3,7 +3,7 @@
 echo "🚧 Building..."
 cd docs
 pip install pipenv
-pipenv install
-pipenv run mkdocs gh-deploy --force
+pip install mkdocs mkdocs-material mkdocs-macros-plugin mike
+mkdocs gh-deploy --force --clean --verbose
 
 echo "🍺 Site updated!"
