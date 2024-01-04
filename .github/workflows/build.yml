@@ -10,63 +10,30 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v3
-            - name: Install JDK 17
-              uses: actions/setup-java@v3
-              with:
-                  distribution: temurin
-                  java-version: 17
-            - name: Build
-              run: mvn -B install
-    docs:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - name: Install JDK 17
-              uses: actions/setup-java@v3
-              with:
-                  distribution: temurin
-                  java-version: 17
-            - name: Site generation
-              run: |
-                  sudo apt-get install graphviz
-                  export BASE_URL=`curl -Ls -o /dev/null -w %{url_effective} -I ${GITHUB_REPOSITORY_OWNER}.github.io`
-
-                  cd docs
-                  mvn package
-            - name: Publishing fragment
-              uses: actions/upload-artifact@v3
-              with:
-                  name: fragments
-                  path: ./docs/target/generated-asciidoc
-                  if-no-files-found: error
-                  retention-days: 3
+            -   uses: actions/checkout@v3
+            -   name: Install JDK 17
+                uses: actions/setup-java@v3
+                with:
+                    distribution: temurin
+                    java-version: 17
+            -   name: Build
+                run: mvn -B install
     publication:
-        needs: [ docs, build ]
+        needs: [ build ]
         runs-on: ubuntu-latest
         steps:
-            - name: Download default site
-              uses: actions/download-artifact@v3
-              with:
-                  name: fragments
-                  path: target/generated-asciidoc
-            - name: Site assembly
-              run: |
-                  mkdir -p target/site
-                  cp -R target/generated-asciidoc/* target/site
-            - name: Store PR id
-              if: "github.event_name == 'pull_request'"
-              run: echo ${{ github.event.number }} > ./target/site/pr-id.txt
-            - name: Publishing directory for PR preview
-              if: "github.event_name == 'pull_request'"
-              uses: actions/upload-artifact@v3
-              with:
-                  name: site
-                  path: ./target/site
-                  retention-days: 3
-            - name: Publication
-              if: "github.ref_name == 'main' && (github.event_name == 'push' || github.event_name == 'schedule')"
-              uses: peaceiris/actions-gh-pages@v3
-              with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./target/site
+            -   uses: actions/checkout@v3
+            -   name: Install JDK 17
+                uses: actions/setup-java@v3
+                with:
+                    distribution: temurin
+                    java-version: 17
+            -   name: Setup Python
+                uses: actions/setup-python@v5
+                with:
+                    python-version: 3.x
+            -   name: Install MkDocs dependencies
+                run: .github/scripts/install-mkdocs-deps.sh
+            -   name: Publication
+                if: "github.ref_name == 'main' && (github.event_name == 'push' || github.event_name == 'schedule')"
+                run: .github/scripts/deploy-doc.sh

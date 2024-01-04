@@ -19,32 +19,39 @@
         <module>docs</module>
     </modules>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>${assembly-plugin.version}</version>
-                <configuration>
-                    <finalName>quarkus-llm-workshop</finalName>
-                    <appendAssemblyId>true</appendAssemblyId>
-                    <runOnlyAtExecutionRoot>true</runOnlyAtExecutionRoot>
-                    <attach>false</attach>
-                    <descriptors>
-                        <descriptor>assembly.xml</descriptor>
-                    </descriptors>
-                    <outputDirectory>dist</outputDirectory>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>make-assembly</id> <!-- this is used for inheritance merges -->
-                        <phase>package</phase> <!-- bind to the packaging phase -->
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+
+
+    <profiles>
+        <profile>
+            <id>assembly</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <version>${assembly-plugin.version}</version>
+                        <configuration>
+                            <finalName>quarkus-llm-workshop</finalName>
+                            <appendAssemblyId>true</appendAssemblyId>
+                            <runOnlyAtExecutionRoot>true</runOnlyAtExecutionRoot>
+                            <attach>false</attach>
+                            <descriptors>
+                                <descriptor>assembly.xml</descriptor>
+                            </descriptors>
+                            <outputDirectory>dist</outputDirectory>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>make-assembly</id> <!-- this is used for inheritance merges -->
+                                <phase>package</phase> <!-- bind to the packaging phase -->
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

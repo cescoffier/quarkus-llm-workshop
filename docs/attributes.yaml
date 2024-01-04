@@ -1,0 +1,5 @@
+attributes:
+    quarkus-version: 3.6.1.Final
+    versions:
+        java: 17.0.9
+        maven: 3.9.6
