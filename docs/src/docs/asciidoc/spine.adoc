@@ -27,3 +27,4 @@ Clement Escoffier, Codrin Bucur, Lize Raes, Dimitris Andreadis
 
 include::0-intro/intro.adoc[]
 include::1-openai/slot1.adoc[]
+include::2-rag/slot2.adoc[]

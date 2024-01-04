@@ -1,0 +1,7 @@
+[[slot2]]
+= Slot 2: Augmented Generation - Extending Hosted LLMs with Local Documents
+
+
+Shift gears: Explore another LLM and extend its capabilities using local documents.
+Retrieval Augmented Generation: Delve into one of the core patterns in AI usage, understanding the synergy between your data and LLM interactions.
+
