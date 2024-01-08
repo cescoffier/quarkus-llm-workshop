@@ -70,8 +70,6 @@ This workshop is divided into four parts.
 This workshop aims to be as self-explanatory as possible. 
 Follow the instructions, perform the tasks, and feel free to ask for clarification or assistance—our team is here to help.
 
-[//]: # ( TODO: explain how to download the workshop archive )
-
 Firstly, ensure you have a 64-bit computer with admin rights (for installing necessary tools) and at least 8GB of RAM.
 
 This workshop will use the following software, tools, frameworks that you need to install and understand:
@@ -91,7 +89,7 @@ We will also use Maven {{ attributes.versions.maven }}, but there's no need to i
 ## Getting Started
 
 Once you have installed all the prerequisites, you can start the workshop. 
-Unzip the workshop archive, open a terminal in the `quarkus-llm-workshop` directory, and run the following command to start the workshop:
+Download and unzip the [workshop archive](https://github.com/cescoffier/quarkus-llm-workshop/blob/main/dist/quarkus-llm-workshop-workshop.zip), open a terminal in the `quarkus-llm-workshop` directory, and run the following command to start the workshop:
 
 ```bash
 $ ./mwnw verify

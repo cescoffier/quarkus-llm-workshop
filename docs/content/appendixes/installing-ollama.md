@@ -24,6 +24,6 @@ $ ollama pull llama2
 ```
 
 ???+ warning  
-The [LLAMA2](https://ollama.ai/library/llama2) model is quite large (> 3.8GB). Make sure you have enough disk space.
+    The [LLAMA2](https://ollama.ai/library/llama2) model is quite large (> 3.8GB). Make sure you have enough disk space.
 
 Once pulled, we will be able to use it.
