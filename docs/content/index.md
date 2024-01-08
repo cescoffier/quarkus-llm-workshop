@@ -92,7 +92,7 @@ Once you have installed all the prerequisites, you can start the workshop.
 Download and unzip the [workshop archive](https://github.com/cescoffier/quarkus-llm-workshop/blob/main/dist/quarkus-llm-workshop-workshop.zip), open a terminal in the `quarkus-llm-workshop` directory, and run the following command to start the workshop:
 
 ```bash
-$ ./mwnw verify
+$ ./mvnw verify
 ```
 
 This command will build the code of the workshop. 

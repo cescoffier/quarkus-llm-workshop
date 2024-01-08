@@ -23,12 +23,15 @@
                 <exclude>**/node_modules/**</exclude>
             </excludes>
             <includes>
+                <include>.mvn/**/*</include>
                 <include>pom.xml</include>
                 <include>.editorconfig</include>
                 <include>mvnw*</include>
                 <include>docs/**/*</include>
                 <include>triage-application/**/*</include>
+                <include>triage-application/.mvn/**/*</include>
                 <include>chat-application/**/*</include>
+                <include>chat-application/.mvn/**/*</include>
             </includes>
         </fileSet>
     </fileSets>
