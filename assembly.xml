@@ -9,22 +9,6 @@
 
     <fileSets>
         <fileSet>
-            <outputDirectory>./</outputDirectory>
-            <directory>${basedir}/target/temp-project</directory>
-            <includes>
-                <include>mvnw*</include>
-                <include>.mvn/wrapper/maven-wrapper.properties</include>
-            </includes>
-        </fileSet>
-        <fileSet>
-            <outputDirectory>./super-heroes</outputDirectory>
-            <directory>${basedir}/target/temp-project</directory>
-            <includes>
-                <include>mvnw*</include>
-                <include>.mvn/wrapper/maven-wrapper.properties</include>
-            </includes>
-        </fileSet>
-        <fileSet>
             <directory>${basedir}</directory>
             <useDefaultExcludes>true</useDefaultExcludes>
             <excludes>
@@ -44,6 +28,7 @@
                 <include>mvnw*</include>
                 <include>docs/**/*</include>
                 <include>triage-application/**/*</include>
+                <include>chat-application/**/*</include>
             </includes>
         </fileSet>
     </fileSets>
