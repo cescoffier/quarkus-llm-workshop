@@ -7,11 +7,13 @@ nav:
     - 'index.md'
     - 'Workshop':
           - 'workshop/01-slot1.md'
+          - 'workshop/02-slot2.md'
     - 'Appendixes':
           - 'appendixes/installing-curl.md'
           - 'appendixes/installing-docker.md'
           - 'appendixes/installing-jdk.md'
           - 'appendixes/installing-wsl.md'
+          - 'appendixes/installing-ollama.md'
 
 theme:
     name: material
