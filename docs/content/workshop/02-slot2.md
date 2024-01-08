@@ -101,10 +101,10 @@ The chat bot is composed of two parts:
 
 ### The AI Service
 
-The AI service is located in the `me.escoffier.workshop.chat.ChatService` class:
+The AI service is located in the `io.quarkiverse.langchain4j.workshop.chat.ChatService` class:
 
 ```java
-package me.escoffier.workshop.chat;
+package io.quarkiverse.langchain4j.workshop.chat;
 
 import dev.langchain4j.service.MemoryId;
 import dev.langchain4j.service.SystemMessage;
@@ -157,7 +157,7 @@ The parameter is annotated with `@MemoryId`, indicating that this object will be
 We need to provide a CDI bean implementing the `ChatMemoryProvider` interface:
 
 ```java
-package me.escoffier.workshop.chat;
+package io.quarkiverse.langchain4j.workshop.chat;
 
 import dev.langchain4j.memory.ChatMemory;
 import dev.langchain4j.memory.chat.ChatMemoryProvider;
@@ -204,7 +204,7 @@ That's what we are going to see now.
 The second part is the WebSocket endpoint:
 
 ```java
-package me.escoffier.workshop.chat;
+package io.quarkiverse.langchain4j.workshop.chat;
 
 import io.smallrye.mutiny.infrastructure.Infrastructure;
 import jakarta.enterprise.context.control.ActivateRequestContext;
@@ -311,7 +311,7 @@ The `pom.xml` file contains the following dependency:
 The ingestion process is implemented in the `DocumentIngestor` class:
 
 ```java
-package me.escoffier.workshop.chat;
+package io.quarkiverse.langchain4j.workshop.chat;
 
 import dev.langchain4j.data.document.Document;
 import dev.langchain4j.data.document.loader.FileSystemDocumentLoader;
@@ -382,7 +382,7 @@ Let's implement the second step.
 The RAG pattern is implemented in the `DocumentRetriever` class:
 
 ```java
-package me.escoffier.workshop.chat;
+package io.quarkiverse.langchain4j.workshop.chat;
 
 import dev.langchain4j.data.segment.TextSegment;
 import dev.langchain4j.model.embedding.EmbeddingModel;

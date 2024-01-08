@@ -1,7 +1,6 @@
-package me.escoffier.workshop.chat;
+package io.quarkiverse.langchain4j.workshop.chat;
 
 import io.smallrye.mutiny.infrastructure.Infrastructure;
-import jakarta.enterprise.context.control.ActivateRequestContext;
 import jakarta.inject.Inject;
 import jakarta.websocket.*;
 import jakarta.websocket.server.ServerEndpoint;

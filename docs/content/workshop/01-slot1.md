@@ -37,7 +37,7 @@ Let's delve into the code.
 Firstly, let's explore the TriageService interface:
 
 ```java
-package me.escoffier.workshop.triage;
+package io.quarkiverse.langchain4j.workshop.triage;
 
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
@@ -97,7 +97,7 @@ The prompt explains to the AI service what it needs to do and what response it s
 Thus, the triage method returns a `TriageReview`:
 
 ```java
-package me.escoffier.workshop.triage;
+package io.quarkiverse.langchain4j.workshop.triage;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 
@@ -115,7 +115,7 @@ The `TriageReview` is a simple record that contains the evaluation (positive or 
 Now, let's see how we can use your AI service:
 
 ```
-package me.escoffier.workshop.triage;
+package io.quarkiverse.langchain4j.workshop.triage;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.POST;

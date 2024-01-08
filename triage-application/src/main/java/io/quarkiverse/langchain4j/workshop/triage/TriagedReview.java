@@ -1,4 +1,4 @@
-package me.escoffier.workshop.triage;
+package io.quarkiverse.langchain4j.workshop.triage;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 
