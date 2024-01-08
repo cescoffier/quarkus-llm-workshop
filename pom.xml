@@ -10,12 +10,13 @@
     <properties>
         <assembly-plugin.version>3.6.0</assembly-plugin.version>
 
-        <quarkus.version>3.6.1</quarkus.version>
-        <quarkus-langchain.version>0.4.0</quarkus-langchain.version>
+        <quarkus.version>3.6.4</quarkus.version>
+        <quarkus-langchain.version>0.6.1</quarkus-langchain.version>
     </properties>
 
     <modules>
         <module>triage-application</module>
+        <module>chat-application</module>
         <module>docs</module>
     </modules>
 
