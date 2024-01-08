@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>me.escoffier</groupId>
+        <groupId>io.quarkiverse.langchain4j.workshop</groupId>
         <artifactId>quarkus-llm-workshop-root</artifactId>
         <version>1.0</version>
     </parent>

@@ -1,4 +1,4 @@
-package me.escoffier.workshop.triage;
+package io.quarkiverse.langchain4j.workshop.triage;
 
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;

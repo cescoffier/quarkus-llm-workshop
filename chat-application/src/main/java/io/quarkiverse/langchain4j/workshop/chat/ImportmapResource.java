@@ -1,4 +1,4 @@
-package me.escoffier.workshop.chat;
+package io.quarkiverse.langchain4j.workshop.chat;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;

@@ -1,4 +1,4 @@
-package me.escoffier.workshop.triage;
+package io.quarkiverse.langchain4j.workshop.triage;
 
 import jakarta.inject.Inject;
 import jakarta.ws.rs.POST;

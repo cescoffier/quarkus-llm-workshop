@@ -1,4 +1,4 @@
-package me.escoffier.workshop.chat;
+package io.quarkiverse.langchain4j.workshop.chat;
 
 import dev.langchain4j.data.segment.TextSegment;
 import dev.langchain4j.model.embedding.EmbeddingModel;
