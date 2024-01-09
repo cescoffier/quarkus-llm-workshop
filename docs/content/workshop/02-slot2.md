@@ -5,6 +5,8 @@ In this section, we will:
 1. **Shift gears:** Explore another LLM and extend its capabilities using local documents.
 2. **Retrieval Augmented Generation:** Delve into one of the core patterns in AI usage, understanding the synergy between your data and LLM interactions.
 
+![Retrieval augmented generation with Quarkus](../assets/rag.jpg)
+
 We are going to build a chatbot that will use a pre-trained LLM (llama2) to generate responses.
 We will then extend the LLM with local documents to improve the quality of the responses.
 

@@ -3,6 +3,13 @@
 You are about to embark on a transformative journey as we explore the integration of AI into enterprise applications during this workshop. 
 With technology evolving at an unprecedented pace, this workshop aims to demystify the process of infusing Artificial Intelligence and Large Language Models (LLM) into Quarkus applications.
 
+<figure markdown>
+![Quarkus Langchain4J](./assets/overall.jpg)
+<figcaption>Overall overview of the workshop</figcaption>
+</figure>
+
+
+
 ## Once upon a time, Quarkus
 
 Quarkus was released in March 2019 by a team of engineers with the dream of supercharging Java for Cloud/Kubernetes deployments while bringing joy back to developers. 
@@ -33,11 +40,18 @@ Integrating AI can be approached in various ways, but properly integrating AI in
 There are numerous challenges, including:
 
 - How to integrate AI into an application without leaking concepts everywhere?
+- How to integrate multiple models without having to deal with many different APIs
 - How to make this AI integration *observable*?
 - What about auditing?
 - How to provide data to the AI to improve prediction accuracy?
 
 In this workshop, you will learn how to integrate AI into a Quarkus application.
+We are going to use [Quarkus Langchain4J](https://github.com/quarkiverse/quarkus-langchain4j), a Quarkus extension that provides a unified API to interact with multiple AI models (based on [langchain4j](https://github.com/langchain4j/langchain4j))
+
+<figure markdown>
+![Quarkus LLM Integration](./assets/ai-models.jpg)
+  <figcaption>Integrating multiple LLMs models</figcaption>
+</figure>
 
 ???+ note
 
