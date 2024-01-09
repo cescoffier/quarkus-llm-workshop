@@ -1,0 +1,14 @@
+@media(min-width: 768px) {
+    .frontpage-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2em;
+        row-gap: 1em;
+    }
+}
+
+main img {
+    padding: 1em;
+    border-radius: 25px;
+    filter: drop-shadow(0 0 0.5rem #1478dc);
+}
