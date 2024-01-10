@@ -47,6 +47,7 @@ theme:
         - navigation.tracking
         - content.code.copy
         - toc.follow
+        - content.action.edit
     custom_dir: mkdocs-customizations/overrides
 
 markdown_extensions:
