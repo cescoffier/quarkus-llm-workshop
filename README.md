@@ -5,6 +5,6 @@ With technology evolving at an unprecedented pace, this workshop aims to demysti
 
 ![Quarkus Langchain4J](docs/content/assets/overall.jpg)
 
-Navigate to the [Getting Started](https://cescoffier.github.io/quarkus-llm-workshop/) to get started, or scan the following qr code:
+Navigate to the [workshop page](https://cescoffier.github.io/quarkus-llm-workshop/) to get started, or scan the following qr code:
 
 ![QR Code](docs/content/assets/qrcode.png)
