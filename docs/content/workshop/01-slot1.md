@@ -7,14 +7,22 @@ We walk through the process of integration, discussing the benefits and challeng
 
 LLM stands for Large Language Model.
 However, you do not interact with them directly, you use a _chat model_.
-A chat model is a model trained to interact with humans.
 
 It follows a conversational pattern: you send a prompt, and the model responds with a message.
+The conversation is a sequence of messages and responses.
+
+<figure markdown>
+![Conversation with an LLM](../assets/conversation.jpg)
+<figcaption>Conversation with an LLM</figcaption>
+</figure>
+
+The LLM answers to the user request and can use the context of the conversation to provide a more accurate response (_.i.e._ the set of already exchanged messages from the conversation).
 
 When integrating an LLM into an application, you need to define the prompt and the expected response.
 The prompt is a message sent to the LLM, and the response is the message returned by the LLM.
 
 In this slot, we will see how you can easily model your interaction with the LLM with Quarkus and the Quarkus LangChain4J extension.
+We are going to use [Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service) as an example, but Quarkus can interact with many other LLMs.
 
 ## The triage application
 
@@ -24,7 +32,7 @@ It's a simple application but serves as a good example of integrating OpenAI wit
 In a terminal, navigate to the `triage-application` directory and run the following command:
 
 ```shell
-$ export OPENAI_API_KEY=<your OpenAI API key>
+$ export AZURE_OPENAI_API_KEY=<your OpenAI API key>
 $ ./mvnw quarkus:dev
 ```
 
@@ -149,19 +157,35 @@ So, we do not leak any details about the AI service.
 In the `application.properties` file, you will see the following:
 
 ```properties
-quarkus.langchain4j.openai.api-key=${OPENAI_API_KEY}
-quarkus.langchain4j.openai.chat-model.temperature=0.5
-quarkus.langchain4j.openai.timeout=60s
-```
+quarkus.langchain4j.azure-openai.chat-model.temperature=0.5
+quarkus.langchain4j.azure-openai.timeout=60s
 
-The first property is used to configure the API key. 
-The temperature is used to control the creative aspect of the AI service. 
+quarkus.langchain4j.azure-openai.api-key=${AZURE_OPENAI_API_KEY}
+quarkus.langchain4j.azure-openai.resource-name=redhat-workshop-aoai
+quarkus.langchain4j.azure-openai.deployment-id=gpt-35-turbo
+```
+ 
+The first property, _temperature_, is used to control the creative aspect of the AI service. 
 The higher the temperature, the more creative the AI service will be. 
-In our case, we want to limit the creativity to avoid unexpected results. 
-The last property is used to configure the timeout. 
-OpenAI can be slow to answer. 
-60s is generally a good value. However, 
-feel free to adapt.
+In our case, we want to limit the creativity to avoid unexpected results.
+
+The second property is used to configure the timeout. 
+LLM can be slow to answer. 
+60s is generally a good value. 
+However, feel free to adapt.
+
+The last three properties configure the access to the Azure OpenAI service.
+
+??? info "Using plain OpenAI"
+    You can also use _plain_ OpenAI. You will need an [OpenAI API key](https://platform.openai.com/api-keys). Then, replace the content of the `application.properties` with:
+    
+    ```properties
+    quarkus.langchain4j.openai.api-key=${OPENAI_API_KEY}
+    quarkus.langchain4j.openai.chat-model.temperature=0.5
+    quarkus.langchain4j.openai.timeout=60s
+    ```
+
+    Finally, in the `pom.xml`, replace `quarkus-langchain4j-azure-openai` with `quarkus-langchain4j-openai`
 
 ## Under the hood
 As we have seen, Quarkus integrates LLM using a declarative approach. 
@@ -197,6 +221,7 @@ Open the `TriageService` interface and add (if not already present) the followin
 
 @Retry(maxRetries = 2)
 @Fallback(fallbackMethod = "fallback")
+@RateLimit(value = 2, window = 10, windowUnit = ChronoUnit.SECONDS)
 TriagedReview triage(String review);
 ```
 
@@ -204,7 +229,13 @@ The `@Retry` annotation is used to retry the invocation of the AI service in cas
 In this case, we will retry twice. 
 The `@Fallback` annotation is used to define a fallback method that will be invoked if the AI service failed to answer (after the 2 retries).
 
-Let's implement the `fallback` method:
+The `@RateLimit` annotation is used to limit the number of requests sent to the AI service.
+In this case, we will limit the number of requests to 2 per 10 seconds.
+Indeed, calling a AI service might be expensive.
+Also, for the workshop, the Azure OpenAI service has also a rate limit, thus we need to limit the number of requests.
+When the limit is reached, the fallback method is called.
+
+Thus,  let's implement the `fallback` method:
 
 ```java
 static TriagedReview fallback(String review) {
@@ -213,7 +244,7 @@ static TriagedReview fallback(String review) {
 ```
 
 The `fallback` method returns a negative evaluation and a message explaining that the service is unavailable. 
-The Quarkus fault-tolerance support also provides timeout, circuit breaker, bulkhead, and rate limiting. 
+The Quarkus fault-tolerance support also provides timeout, circuit breaker and bulkhead. 
 
 Check the [Quarkus documentation](https://quarkus.io/guides/smallrye-fault-tolerance) for more details.
 

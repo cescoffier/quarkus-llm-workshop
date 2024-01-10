@@ -3,10 +3,15 @@ package io.quarkiverse.langchain4j.workshop.triage;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
 import io.quarkiverse.langchain4j.RegisterAiService;
+import io.smallrye.faulttolerance.api.RateLimit;
+import jakarta.enterprise.context.ApplicationScoped;
 import org.eclipse.microprofile.faulttolerance.Fallback;
 import org.eclipse.microprofile.faulttolerance.Retry;
 
+import java.time.temporal.ChronoUnit;
+
 @RegisterAiService
+@ApplicationScoped
 public interface TriageService {
 
     @SystemMessage("""
@@ -33,6 +38,7 @@ public interface TriageService {
             """)
     @Retry(maxRetries = 2)
     @Fallback(fallbackMethod = "fallback")
+    @RateLimit(value = 2, window = 10, windowUnit = ChronoUnit.SECONDS)
     TriagedReview triage(String review);
 
     static TriagedReview fallback(String review) {
