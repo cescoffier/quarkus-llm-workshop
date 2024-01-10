@@ -7,4 +7,4 @@ With technology evolving at an unprecedented pace, this workshop aims to demysti
 
 Navigate to the [Getting Started](https://cescoffier.github.io/quarkus-llm-workshop/) to get started, or scan the following qr code:
 
-![QR Code](docs/content/assets/llm-workshop.png)
+![QR Code](docs/content/assets/qrcode.png)
