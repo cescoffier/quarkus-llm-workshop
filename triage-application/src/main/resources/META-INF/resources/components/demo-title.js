@@ -27,7 +27,7 @@ export class DemoTitle extends LitElement {
         padding: 1em;
         background: var(--main-bg-color);
       }
-      
+
       .explanation {
         margin-left: auto;
         margin-right: auto;
@@ -45,7 +45,7 @@ export class DemoTitle extends LitElement {
             <div class="explanation">
                 This demo shows how an LLM can triage reviews automatically.
                 This frontend lets you write a review about a financial product and submit it to the backend.
-                The backend use LLM (GPT 3.5) to evaluate the review and provide a response.
+                The backend use the GPT 3.5-turbo LLM (provided by Microsoft Azure) to evaluate the review and provide a response.
             </div>
         `
     }

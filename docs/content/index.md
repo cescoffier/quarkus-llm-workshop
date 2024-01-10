@@ -93,7 +93,7 @@ This workshop will use the following software, tools, frameworks that you need t
 * Docker or Podman (See instructions in [the appendix](./appendixes/installing-docker.md)).
 * cURL (should be installed; if not, check [the appendix](./appendixes/installing-curl.md)).
 * Ollama and the Llama 2 model (See instructions in [the appendix](./appendixes/installing-ollama.md)).
-* OpenAI or Azure OpenAI keys.
+* An Azure OpenAI key will be provided during the workshop.
 
 We will also use Maven {{ attributes.versions.maven }}, but there's no need to install it. The workshop scaffolding includes a maven wrapper, `mvnw`.
 
