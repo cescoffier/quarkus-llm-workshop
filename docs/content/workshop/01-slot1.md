@@ -36,6 +36,9 @@ $ export AZURE_OPENAI_API_KEY=<your OpenAI API key>
 $ ./mvnw quarkus:dev
 ```
 
+???+ info
+The API key is used to access the Azure OpenAI service, it is provided in the companion document.
+
 This starts the application in development mode. Open a browser and navigate to http://localhost:8080 to see the application's frontend.
 The frontend is a simple form allowing you to submit a review. Upon submission, the application classifies it as positive or negative and displays the result.
 

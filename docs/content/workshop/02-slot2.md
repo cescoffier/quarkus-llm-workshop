@@ -17,6 +17,9 @@ The model is running remotely.
 It can become a security concern if you want to use the model for sensitive data, especially when using local documents to extend the knowledge of the LLM.
 Thus, here, we will run the model locally.
 
+If for any reason you are not able to run the model locally, you can use a hosted LLAMA2 model.
+Jump to the [Using a hosted LLama 2 model](#using-a-hosted-llama-2-model) section.
+
 ### Installing LLAMA2
 
 If not already done, install LLAMA2.
@@ -48,6 +51,21 @@ $ ollama pull llama2
     The [LLAMA2](https://ollama.ai/library/llama2) model is quite large (> 3.8GB). Make sure you have enough disk space.
 
 Once pulled, we will be able to use it.
+
+### Using a hosted LLama 2 model
+
+If you are not able to run the model locally, you can use a hosted [LLAMA2](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf) model.
+To do so, you need to:
+
+*  Define the Hugging Face API key provided in the companion document:
+ 
+```shell
+$ export HUGGINGFACE_API_KEY=<Your HuggingFace token>
+```
+
+* Then, in the rest of the section, you will use the `chat-application-hugging-face` directory instead of the `chat-application` directory.
+It uses a hugging face inference point providing the LLama2 model. 
+The configuration and dependencies are slightly different from the ones described in the rest of the section.
 
 ### The Chat Application
 
@@ -426,5 +444,5 @@ You do not have to do anything about the attachment of the chunks to the user me
 ## Summary
 
 That concludes the second slot of the workshop.
-We have seen how to use a local LLM (LLAMA2) to build a chat bot.
+We have seen how to use a local (or hosted) LLM (LLAMA2) to build a chat bot.
 We have also looked into the ingestion and RAG patterns to extend the LLM with local documents.
