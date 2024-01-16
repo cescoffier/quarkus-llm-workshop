@@ -104,12 +104,19 @@ export class DemoReview extends LitElement {
             headers: {
                 "Content-Type": "application/json",
             },
-        }).then(response => response.json())
+        })
+            .then(response => response.text())
             .then(data => {
                 this.in_progress = false;
                 this.complete = true;
+                if (data.includes("positive")) {
+                    this.last_message = "Thanks for this positive review!";
+                } else if (data.includes("negative")) {
+                    this.last_message = "We apologize for the bad experience!";
+                } else {
+                    this.last_message = "We are not sure what to make of this review: " + data + ".";
+                }
                 this.review = "";
-                this.last_message = data.message;
             })
             .catch((error) => {
                 console.error('Error:', error);

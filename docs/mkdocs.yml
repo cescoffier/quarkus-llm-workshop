@@ -8,6 +8,8 @@ nav:
     - 'Workshop':
           - 'workshop/01-slot1.md'
           - 'workshop/02-slot2.md'
+          - 'workshop/03-slot3.md'
+          - 'workshop/04-slot4.md'
     - 'Appendixes':
           - 'appendixes/installing-curl.md'
           - 'appendixes/installing-docker.md'
