@@ -11,7 +11,6 @@ import org.eclipse.microprofile.faulttolerance.Retry;
 import java.time.temporal.ChronoUnit;
 
 @RegisterAiService
-@ApplicationScoped
 public interface TriageService {
 
     @SystemMessage("""

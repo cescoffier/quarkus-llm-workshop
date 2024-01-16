@@ -30,6 +30,8 @@
                 <include>docs/**/*</include>
                 <include>triage-application/**/*</include>
                 <include>triage-application/.mvn/**/*</include>
+                <include>triage-application-openshift-ai/**/*</include>
+                <include>triage-application-openshift-ai/.mvn/**/*</include>
                 <include>chat-application/**/*</include>
                 <include>chat-application/.mvn/**/*</include>
                 <include>chat-application-hugging-face/**/*</include>
