@@ -1,6 +1,6 @@
-# Slot 4: Utilizing a model deploying on OpenShift AI
+# Slot 4: Utilizing a model deployed on OpenShift AI
 
-Welcome to the final slot of the workshop! 
+Welcome to the final slot of the workshop!
 In this session, we'll leverage the model deployed in the previous slot to customize the triage application introduced in the first slot.
 
 Depending on the model that have been deployed, the functionality of the triage application will be different.
@@ -11,7 +11,7 @@ The application located in the `triage-application-openshift-ai` is using a simp
 
 ## Using the OpenShift AI Quarkus integration
 
-To interact with a model running on OpenShift AI, we'll include a specific dependency in the `pom.xml` file located in `triage-application-openshift-ai`. 
+To interact with a model running on OpenShift AI, we'll include a specific dependency in the `pom.xml` file located in `triage-application-openshift-ai`.
 This dependency is tailored for OpenShift AI and facilitates interaction with the model serving platform and its API:
 
 ```xml
@@ -32,7 +32,7 @@ quarkus.langchain4j.openshift-ai.chat-model.model-id=flant5s-l
 ```
 
 For now, we are going to use the [Flan T5 model](https://paperswithcode.com/method/flan-t5) model.
-This model is not as powerful as GPT 3.5. 
+This model is not as powerful as GPT 3.5.
 Thus, the application is sightly simplified.
 
 ???+ note
@@ -100,7 +100,7 @@ Once received, the response is passed to the browser and displayed.
 ## Using another model
 
 One of the great benefits of OpenShift AI is that it allows you to deploy multiple model.
-So, we can switch to the [Mistral model](https://docs.mistral.ai/). 
+So, we can switch to the [Mistral model](https://docs.mistral.ai/).
 
 Open the `application.properties` file to comment the Flan T5 configuration, and uncomment the Mistral one:
 
@@ -124,7 +124,7 @@ Note that it is a much more powerful model, so the response time is longer.
 
 ## Summary
 
-This concludes this slot and the workshop. 
+This concludes this slot and the workshop.
 In this slot we have seen how to use a model deployed on OpenShift AI with Quarkus LangChain4J.
 We used two models: Flan T5 and Mistral, both served by OpenShift AI.
 
@@ -136,5 +136,5 @@ To summarize the workshop, we have seen how to:
 * We used Quarkus fault tolerance to handle failures and rate limiting gracefully
 * We have seen how to implement a RAG (retrieval augmented generation) pattern
 
-We hope you enjoy the workshop. 
+We hope you enjoy the workshop.
 We are eager to hear your positive and negative feedback and suggestions for improvements.
