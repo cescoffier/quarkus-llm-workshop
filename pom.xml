@@ -17,6 +17,7 @@
     <modules>
         <module>triage-application</module>
         <module>chat-application</module>
+        <module>chat-application-hugging-face</module>
         <module>docs</module>
     </modules>
 

@@ -32,6 +32,8 @@
                 <include>triage-application/.mvn/**/*</include>
                 <include>chat-application/**/*</include>
                 <include>chat-application/.mvn/**/*</include>
+                <include>chat-application-hugging-face/**/*</include>
+                <include>chat-application-hugging-face/.mvn/**/*</include>
             </includes>
         </fileSet>
     </fileSets>
