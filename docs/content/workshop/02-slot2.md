@@ -17,7 +17,7 @@ The model is running remotely.
 It can become a security concern if you want to use the model for sensitive data, especially when using local documents to extend the knowledge of the LLM.
 Thus, here, we will run the model locally.
 
-If for any reason you are not able to run the model locally, you can use a hosted LLAMA2 model.
+If for any reason, you are not able to run the model locally, you can use a hosted LLAMA2 model.
 Jump to the [Using a hosted LLama 2 model](#using-a-hosted-llama-2-model) section.
 
 ### Installing LLAMA2
@@ -288,7 +288,7 @@ Start the application using:
 $ ./mvnw quarkus:dev
 ```
 
-Then, open your browser at http://localhost:8080 and click on the chat bot link (bottom right).
+Then, open your browser at [http://localhost:8080](http://localhost:8080) and click on the chat bot link (bottom right).
 You can start chatting with the bot.
 If you ask questions about the products offered by the bank, the bot will answer.
 But how does it get this knowledge?

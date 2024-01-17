@@ -37,9 +37,9 @@ $ ./mvnw quarkus:dev
 ```
 
 ???+ info
-The API key is used to access the Azure OpenAI service, it is provided in the companion document.
+    The API key is used to access the Azure OpenAI service, it is provided in the companion document.
 
-This starts the application in development mode. Open a browser and navigate to http://localhost:8080 to see the application's frontend.
+This starts the application in development mode. Open a browser and navigate to [http://localhost:8080](http://localhost:8080) to see the application's frontend.
 The frontend is a simple form allowing you to submit a review. Upon submission, the application classifies it as positive or negative and displays the result.
 
 ## Anatomy of the application
@@ -125,7 +125,7 @@ The `TriageReview` is a simple record that contains the evaluation (positive or 
 
 Now, let's see how we can use your AI service:
 
-```
+```java
 package io.quarkiverse.langchain4j.workshop.triage;
 
 import jakarta.inject.Inject;
@@ -218,7 +218,7 @@ Let's extend our AI service to make it more resilient.
 Open the `TriageService` interface and add (if not already present) the following annotation to the `triage` method:
 
 ```java
-// Do not forget to add the following import:
+// Do not forget to add the following imports:
 // import org.eclipse.microprofile.faulttolerance.Fallback;
 // import org.eclipse.microprofile.faulttolerance.Retry;
 
@@ -242,7 +242,9 @@ Thus,  let's implement the `fallback` method:
 
 ```java
 static TriagedReview fallback(String review) {
-    return new TriagedReview(Evaluation.NEGATIVE, "Sorry, we are unable to process your review at the moment. Please try again later.");
+    return new TriagedReview(Evaluation.NEGATIVE, 
+        "Sorry, we are unable to process your review at the moment. " +
+        "Please try again later.");
 }
 ```
 
@@ -274,7 +276,7 @@ It also provides specific metrics for the AI service.
 For example, the number of requests, the number of errors, the response time, etc.
 
 Start the application and post a few reviews. 
-Then, open a browser and navigate to http://localhost:8080/q/metrics to see the metrics:
+Then, open a browser and navigate to [http://localhost:8080/q/metrics](http://localhost:8080/q/metrics) to see the metrics:
 
 ```text
 # HELP langchain4j_aiservices_TriageService_triage_seconds
@@ -296,8 +298,8 @@ The Quarkus tracing support is based on [OpenTelemetry](https://opentelemetry.io
 Before seeing traces, we must start the OpenTelemetry collector and the Jaeger UI (to visualize the traces). 
 In a new terminal, navigate to the `triage-application` directory and run the following command:
 
-```
-$ docker-compose -f observability-stack.yml up
+```shell
+$ docker compose -f observability-stack.yml up
 ```
 
 With the observability stack up, we can start submitting reviews for triage. 

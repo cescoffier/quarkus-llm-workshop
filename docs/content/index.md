@@ -67,17 +67,20 @@ We are going to use [Quarkus Langchain4J](https://github.com/quarkiverse/quarkus
 This workshop is divided into four parts.
 
 * **Slot 1: Unveiling the Potential - Integrating OpenAI with Quarkus**
-- Experience the hype: Learn to integrate OpenAI into a Quarkus application seamlessly.
-- Designing Interactions: Explore strategies for crafting meaningful interactions with large language models.
-- AI Empowerment: Discover tools and techniques for providing robust control over AI within your application.
+
+  - Experience the hype: Learn to integrate OpenAI into a Quarkus application seamlessly.
+  - Designing Interactions: Explore strategies for crafting meaningful interactions with large language models.
+  - AI Empowerment: Discover tools and techniques for providing robust control over AI within your application.
 
 * **Slot 2: Augmented Generation - Extending Hosted LLMs with Local Documents**
-- Shift gears: Explore another LLM and extend its capabilities using local documents.
-- Retrieval Augmented Generation: Delve into one of the core patterns in AI usage, understanding the synergy between your data and LLM interactions.
+
+  - Shift gears: Explore another LLM and extend its capabilities using local documents.
+  - Retrieval Augmented Generation: Delve into one of the core patterns in AI usage, understanding the synergy between your data and LLM interactions.
 
 * **Slots 3 & 4: OpenShift AI - Training and Hosting Your Own Model**
-- Harness the power of OpenShift AI and its MLOps capabilities: Learn how it facilitates the training and hosting of custom AI models.
-- Practical Integration: Witness the integration of a custom model into a Quarkus application to complete the end-to-end narrative.
+
+  - Harness the power of OpenShift AI and its MLOps capabilities: Learn how it facilitates the training and hosting of custom AI models.
+  - Practical Integration: Witness the integration of a custom model into a Quarkus application to complete the end-to-end narrative.
 
 ## Prerequisites
 
