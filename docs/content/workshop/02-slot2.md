@@ -22,16 +22,9 @@ Jump to the [Using a hosted LLama 2 model](#using-a-hosted-llama-2-model) sectio
 
 ### Installing LLAMA2
 
-If not already done, install LLAMA2.
+If not already done, install LLAMA2 use [ollama](https://ollama.ai/) following the instructions [discribed in the appendix](../appendixes/installing-ollama.md)).
 
-To install LLAMA 2, we will use [ollama](https://ollama.ai/).
-If you use Windows, you can follow the instructions from [ollama's official Docker image](https://ollama.ai/blog/ollama-is-now-available-as-an-official-docker-image).
-Note that when using Docker, the model will be running in a container.
-Without tuning, it is quite slow.
-
-If you use Linux or Mac, download ollama from [ollama's download page](https://ollama.ai/download) and follow the installation instructions.
-
-Once installed, you should have access to the `ollama` command line tool:
+Once installed with Ollama up and running, you should have access to the `ollama` command line tool:
 
 ```bash
 $ ollama --version
@@ -266,6 +259,9 @@ public class ChatBotWebSocket {
 
 It is annotated with `@ServerEndpoint` to indicate that it is a WebSocket endpoint.
 The endpoint is available at the `/chatbot` path, so you can connect to the WebSocket using `ws://localhost:8080/chatbot`.
+
+???+ tip
+    You can check if the port 8080 is already used by another process with the command `lsof -i tcp:8080`.
 
 The `ChatBotWebSocket` bean receives the `ChatService` as well as the `ChatMemoryBean` bean.
 The `onClose` method is called when the WebSocket connection is closed.

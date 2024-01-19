@@ -101,7 +101,7 @@ The `@SystemMessage` and `@UserMessage` annotations define the messages (prompt)
 Note that the triage method receives a String as a parameter (the user review). 
 The prompt can reference the parameter using the \{review} placeholder.
 
-??? tip+ 
+???+ tip 
     Under the hood, Quarkus uses `qute` as a template engine.
 
 The prompt explains to the AI service what it needs to do and what response it should return. 
@@ -179,7 +179,7 @@ However, feel free to adapt.
 
 The last three properties configure the access to the Azure OpenAI service.
 
-??? info "Using plain OpenAI"
+???+ info "Using plain OpenAI"
     You can also use _plain_ OpenAI. You will need an [OpenAI API key](https://platform.openai.com/api-keys). Then, replace the content of the `application.properties` with:
     
     ```properties
@@ -303,7 +303,7 @@ $ docker compose -f observability-stack.yml up
 ```
 
 With the observability stack up, we can start submitting reviews for triage. 
-Then, open a browser and navigate to http://localhost:16686 to see the traces:
+Then, open a browser and navigate to [http://localhost:16686](http://localhost:16686) to see the traces:
 
 1. Select the quarkus-llm-workshop-triage service
 2. Click on the _Find Traces_ button
