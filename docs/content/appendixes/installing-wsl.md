@@ -1,20 +1,15 @@
-## Installing WSL
+# Installing WSL
 
-https://docs.microsoft.com/windows/wsl[Windows Subsystem for Linux] (WSL) lets developers run a GNU/Linux environment -- including most command-line tools, utilities, and applications -- directly on Windows, unmodified, without the overhead of a traditional virtual machine or dual-boot setup.
+[Windows Subsystem for Linux](https://docs.microsoft.com/windows/wsl) (WSL) lets developers run a GNU/Linux environment -- including most command-line tools, utilities, and applications -- directly on Windows, unmodified, without the overhead of a traditional virtual machine or dual-boot setup.
 
-[WARNING]
-====
-If you are using Windows, it is recommended to install WSL as all the commands use bash.
-====
-
-== Installing WSL
+???+ warning  
+    If you are using Windows, it is recommended to install WSL as all the commands use bash.
 
 You can install everything you need to run Windows Subsystem for Linux (WSL) by entering this command in an administrator PowerShell or Windows Command Prompt and then restarting your machine:
 
-[source,shell]
-----
+```bash
 wsl --install
-----
+```
 
 This command will enable the required optional components, download the latest Linux kernel, set WSL 2 as your default, and install a Linux distribution for you (Ubuntu by default).
 
