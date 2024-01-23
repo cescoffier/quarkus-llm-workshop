@@ -103,6 +103,14 @@ The first property is used to specify the model to use.
 In our case, we will use the `llama2` model.
 The second property configures the timeout for the model.
 
+???+ tip
+If you want to visualise the request that is sent to the model and its response, you cam increase the log level by adding the following properties to the `src/main/resources/application.properties` file:
+
+    ```properties
+    quarkus.langchain4j.ollama.log-requests=true
+    quarkus.langchain4j.ollama.log-responses=true
+    ```
+
 Alright, it's time to implement the chatbot part.
 
 ## Implementing the Chat Bot
