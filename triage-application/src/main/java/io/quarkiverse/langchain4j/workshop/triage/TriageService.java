@@ -41,7 +41,8 @@ public interface TriageService {
     TriagedReview triage(String review);
 
     static TriagedReview fallback(String review) {
-        return new TriagedReview(Evaluation.NEGATIVE, "Sorry, we are unable to process your review at the moment. Please try again later.");
+        return new TriagedReview(Evaluation.NEGATIVE,
+            "Sorry, we are unable to process your review at the moment. Please try again later.");
     }
 
 }

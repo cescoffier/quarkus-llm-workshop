@@ -11,7 +11,7 @@
         <assembly-plugin.version>3.6.0</assembly-plugin.version>
 
         <quarkus.version>3.6.4</quarkus.version>
-        <quarkus-langchain.version>0.6.3</quarkus-langchain.version>
+        <quarkus-langchain.version>0.7.0</quarkus-langchain.version>
     </properties>
 
     <modules>
