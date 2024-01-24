@@ -179,6 +179,14 @@ However, feel free to adapt.
 
 The last three properties configure the access to the Azure OpenAI service.
 
+???+ tip
+If you want to visualise the request that is sent to the model and its response, you cam increase the log level by adding the following properties to the `src/main/resources/application.properties` file:
+
+    ```properties
+    quarkus.langchain4j.openai.log-requests=true
+    quarkus.langchain4j.openai.log-responses=true
+    ```
+
 ???+ info "Using plain OpenAI"
     You can also use _plain_ OpenAI. You will need an [OpenAI API key](https://platform.openai.com/api-keys). Then, replace the content of the `application.properties` with:
     
