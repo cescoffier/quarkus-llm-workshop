@@ -90,7 +90,7 @@ echo "The following properties can be copied to either the application.propertie
 echo "--------------------------------------------------"
 echo "quarkus.langchain4j.azure-openai.api-key=$AZURE_OPENAI_KEY"
 echo "quarkus.langchain4j.azure-openai.deployment-id=$AI_DEPLOYMENT"
-echo "quarkus.langchain4j.azure-openai.resource-name=$AZURE_OPENAI_ENDPOINT"
+echo "quarkus.langchain4j.azure-openai.resource-name=$AI_SERVICE"
 ```
 
 Once you've finished the workshop, remember to delete the Azure OpenAI resources to avoid being charged for it:
