@@ -16,6 +16,7 @@ nav:
           - 'appendixes/installing-jdk.md'
           - 'appendixes/installing-wsl.md'
           - 'appendixes/installing-ollama.md'
+          - 'appendixes/accessing-azureai.md'
 
 theme:
     name: material
