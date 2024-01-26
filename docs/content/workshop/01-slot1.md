@@ -37,7 +37,7 @@ $ ./mvnw quarkus:dev
 ```
 
 ???+ info
-    The API key is used to access the Azure OpenAI service, it is provided in the companion document.
+    The API key is used to access the Azure OpenAI service. Make sure you got it following the instructions in [the appendix](../appendixes/accessing-azureai.md).
 
 This starts the application in development mode. Open a browser and navigate to [http://localhost:8080](http://localhost:8080) to see the application's frontend.
 The frontend is a simple form allowing you to submit a review. Upon submission, the application classifies it as positive or negative and displays the result.
@@ -179,8 +179,8 @@ However, feel free to adapt.
 
 The last three properties configure the access to the Azure OpenAI service.
 
-???+ tip
-If you want to visualise the request that is sent to the model and its response, you cam increase the log level by adding the following properties to the `src/main/resources/application.properties` file:
+???+ tip "Logging the request and response"
+    If you want to visualise the request that is sent to the model and its response, you cam increase the log level by adding the following properties to the `src/main/resources/application.properties` file:
 
     ```properties
     quarkus.langchain4j.openai.log-requests=true

@@ -93,10 +93,10 @@ This workshop will use the following software, tools, frameworks that you need t
 
 * Any IDE you feel comfortable with (e.g., Intellij IDEA, Eclipse IDE, VS Code).
 * JDK {{ attributes.versions.java}}.
-* Docker or Podman (See instructions in [the appendix](./appendixes/installing-docker.md)).
+* Docker or Podman (see instructions in [the appendix](./appendixes/installing-docker.md)).
 * cURL (should be installed; if not, check [the appendix](./appendixes/installing-curl.md)).
-* Ollama and the Llama 2 model (See instructions in [the appendix](./appendixes/installing-ollama.md)).
-* An Azure OpenAI key will be provided during the workshop.
+* Ollama and the Llama 2 model (see instructions in [the appendix](./appendixes/installing-ollama.md)).
+* An Azure OpenAI key (see instructions in [the appendix](./appendixes/accessing-azureai.md)).
 
 We will also use Maven {{ attributes.versions.maven }}, but there's no need to install it. The workshop scaffolding includes a maven wrapper, `mvnw`.
 
