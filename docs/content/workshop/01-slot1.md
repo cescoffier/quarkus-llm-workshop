@@ -157,15 +157,15 @@ So, we do not leak any details about the AI service.
 
 ## Configuring the AI service
 
-In the `application.properties` file, you will see the following:
+In the `application.properties` file, you will see the following (see instructions on how to set the `azure-openai` properties in [the appendix](./appendixes/accessing-azureai.md)):
 
 ```properties
 quarkus.langchain4j.azure-openai.chat-model.temperature=0.5
 quarkus.langchain4j.azure-openai.timeout=60s
 
 quarkus.langchain4j.azure-openai.api-key=${AZURE_OPENAI_API_KEY}
-quarkus.langchain4j.azure-openai.resource-name=redhat-workshop-aoai
-quarkus.langchain4j.azure-openai.deployment-id=gpt-35-turbo
+quarkus.langchain4j.azure-openai.deployment-id=${AI_DEPLOYMENT}
+quarkus.langchain4j.azure-openai.resource-name=${AI_SERVICE}
 ```
  
 The first property, _temperature_, is used to control the creative aspect of the AI service. 
