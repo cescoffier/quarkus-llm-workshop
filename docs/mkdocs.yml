@@ -26,7 +26,7 @@ theme:
         code: JetBrains Mono
     icon:
         repo: fontawesome/brands/github
-    favicon: assets/quarkus-logo.png
+    favicon: assets/favicon.ico
     palette:
         - media: "(prefers-color-scheme: light)"
           scheme: default
